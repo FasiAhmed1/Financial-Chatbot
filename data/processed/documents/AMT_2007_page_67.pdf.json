@@ -1,0 +1,36 @@
+{
+  "doc_id": "AMT/2007/page_67.pdf",
+  "text": "the following table presents tower cash flow , adjusted consolidated cash flow and non-tower cash flow for the company and its restricted subsidiaries , as defined in the indentures for the applicable notes ( in thousands ) : .\n\n\n[TABLE]\n| tower cash flow for the three months ended december 31 2007                   | $ 177724           |\n|:------------------------------------------------------------------------------|:-------------------|\n| consolidated cash flow for the twelve months ended december 31 2007           | $ 668123           |\n| less : tower cash flow for the twelve months ended december 31 2007           | -683200 ( 683200 ) |\n| plus : four times tower cash flow for the three months ended december 31 2007 | 710896             |\n| adjusted consolidated cash flow for the twelve months ended december 31 2007  | $ 695819           |\n| non-tower cash flow for the twelve months ended december 31 2007              | $ -48012 ( 48012 ) |\n[/TABLE]\n\n.",
+  "pre_text": [
+    "the following table presents tower cash flow , adjusted consolidated cash flow and non-tower cash flow for the company and its restricted subsidiaries , as defined in the indentures for the applicable notes ( in thousands ) : ."
+  ],
+  "post_text": [
+    "."
+  ],
+  "table": [
+    [
+      "tower cash flow for the three months ended december 31 2007",
+      "$ 177724"
+    ],
+    [
+      "consolidated cash flow for the twelve months ended december 31 2007",
+      "$ 668123"
+    ],
+    [
+      "less : tower cash flow for the twelve months ended december 31 2007",
+      "-683200 ( 683200 )"
+    ],
+    [
+      "plus : four times tower cash flow for the three months ended december 31 2007",
+      "710896"
+    ],
+    [
+      "adjusted consolidated cash flow for the twelve months ended december 31 2007",
+      "$ 695819"
+    ],
+    [
+      "non-tower cash flow for the twelve months ended december 31 2007",
+      "$ -48012 ( 48012 )"
+    ]
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "doc_id": "UNP/2015/page_14.pdf",
+  "text": "item 1b .\nunresolved staff comments item 2 .\nproperties we employ a variety of assets in the management and operation of our rail business .\nour rail network covers 23 states in the western two-thirds of the u.s .\nour rail network includes 32084 route miles .\nwe own 26064 miles and operate on the remainder pursuant to trackage rights or leases .\nthe following table describes track miles at december 31 , 2015 and 2014. .\n\n\n[TABLE]\n|                                         |   2015 |   2014 |\n|:----------------------------------------|-------:|-------:|\n| route                                   |  32084 |  31974 |\n| other main line                         |   7012 |   6943 |\n| passing lines and turnouts              |   3235 |   3197 |\n| switching and classification yard lines |   9108 |   9058 |\n| total miles                             |  51439 |  51172 |\n[/TABLE]\n\nheadquarters building we own our headquarters building in omaha , nebraska .\nthe facility has 1.2 million square feet of space for approximately 4000 employees. .",
+  "pre_text": [
+    "item 1b .",
+    "unresolved staff comments item 2 .",
+    "properties we employ a variety of assets in the management and operation of our rail business .",
+    "our rail network covers 23 states in the western two-thirds of the u.s .",
+    "our rail network includes 32084 route miles .",
+    "we own 26064 miles and operate on the remainder pursuant to trackage rights or leases .",
+    "the following table describes track miles at december 31 , 2015 and 2014. ."
+  ],
+  "post_text": [
+    "headquarters building we own our headquarters building in omaha , nebraska .",
+    "the facility has 1.2 million square feet of space for approximately 4000 employees. ."
+  ],
+  "table": [
+    [
+      "",
+      "2015",
+      "2014"
+    ],
+    [
+      "route",
+      "32084",
+      "31974"
+    ],
+    [
+      "other main line",
+      "7012",
+      "6943"
+    ],
+    [
+      "passing lines and turnouts",
+      "3235",
+      "3197"
+    ],
+    [
+      "switching and classification yard lines",
+      "9108",
+      "9058"
+    ],
+    [
+      "total miles",
+      "51439",
+      "51172"
+    ]
+  ]
+}
