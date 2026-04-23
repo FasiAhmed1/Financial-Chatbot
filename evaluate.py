@@ -1,15 +1,5 @@
 """
 FinQA Evaluation Script
-=======================
-Measures the agent's execution accuracy (ExAcc) on a sample of FinQA examples.
-
-ExAcc (the primary FinQA paper metric): the predicted numeric answer matches the
-gold `exe_ans` within a relative tolerance of 1% (or absolute 0.01 for near-zero).
-
-Usage:
-    python evaluate.py                    # eval 50 random questions from test split
-    python evaluate.py --n 100 --split test
-    python evaluate.py --n 20  --split validation --verbose
 """
 
 import argparse
@@ -25,9 +15,6 @@ from langchain_core.messages import HumanMessage
 from agent.graph import build_finqa_agent, extract_final_answer
 from config import config
 
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
 
 _NUMBER_RE = re.compile(
     r"-?\d{1,3}(?:,\d{3})*(?:\.\d+)?%?|-?\d+(?:\.\d+)?%?"
@@ -88,9 +75,6 @@ def program_accuracy(predicted: str, gold_program: str) -> bool:
     return all(op[:-1] in predicted.lower() for op in ops)
 
 
-# ---------------------------------------------------------------------------
-# Load QA pairs
-# ---------------------------------------------------------------------------
 
 def load_qa_pairs(split: str, n: int, seed: int = 42) -> list[dict]:
     qa_path = Path(config.processed_data_dir) / "qa_pairs" / "qa_pairs.json"
@@ -104,9 +88,6 @@ def load_qa_pairs(split: str, n: int, seed: int = 42) -> list[dict]:
     return random.sample(split_pairs, min(n, len(split_pairs)))
 
 
-# ---------------------------------------------------------------------------
-# Run evaluation
-# ---------------------------------------------------------------------------
 
 def evaluate(n: int = 50, split: str = "test", verbose: bool = False) -> dict:
     print(f"\n{'='*60}")
@@ -180,7 +161,6 @@ def evaluate(n: int = 50, split: str = "test", verbose: bool = False) -> dict:
             avg_lat = total_latency / max(1, i - errors)
             print(f"  [{i:3d}/{n}]  ExAcc={acc:.1f}%  avg_latency={avg_lat:.1f}s")
 
-    # ── Summary ──────────────────────────────────────────────────────────────
     total     = len(results)
     exec_acc  = correct_exec / total * 100 if total else 0.0
     avg_lat   = total_latency / max(1, total - errors)
@@ -206,9 +186,6 @@ def evaluate(n: int = 50, split: str = "test", verbose: bool = False) -> dict:
     return {"exec_acc": exec_acc, "errors": errors, "avg_latency": avg_lat}
 
 
-# ---------------------------------------------------------------------------
-# CLI
-# ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate the FinQA agent.")
