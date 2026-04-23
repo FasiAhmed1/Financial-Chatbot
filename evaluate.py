@@ -47,7 +47,6 @@ def execution_match(predicted: str, gold_exe_ans) -> bool:
     try:
         gold = float(gold_exe_ans)
     except (TypeError, ValueError):
-        # gold is a string answer (e.g. "yes" / "no")
         gold_str = str(gold_exe_ans).strip().lower()
         pred_str = predicted.strip().lower()
         return gold_str in pred_str
@@ -138,7 +137,7 @@ def evaluate(n: int = 50, split: str = "test", verbose: bool = False) -> dict:
             })
 
             if verbose:
-                mark = "✅" if exec_ok else "❌"
+                mark = "correct" if exec_ok else "wrong"
                 print(f"        Pred: {predicted[:120]}")
                 print(f"        {mark}  latency={latency:.1f}s")
 
@@ -153,7 +152,7 @@ def evaluate(n: int = 50, split: str = "test", verbose: bool = False) -> dict:
                 "latency":    time.time() - t0,
             })
             if verbose:
-                print(f"        ❌ ERROR: {exc}")
+                print(f"         ERROR: {exc}")
 
         # Print running accuracy every 10 questions
         if i % 10 == 0 or i == n:
