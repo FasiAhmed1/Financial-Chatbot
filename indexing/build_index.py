@@ -1,14 +1,4 @@
-"""
-Build a ChromaDB vector store from the processed FinQA documents.
 
-Uses local sentence-transformers embeddings (runs on CPU).
-Documents are chunked with overlap so long SEC filings fit within embedding
-context limits.
-
-Run:
-    python -m indexing.build_index          # first-time build
-    python -m indexing.build_index --reset  # wipe and rebuild
-"""
 
 import argparse
 import json
