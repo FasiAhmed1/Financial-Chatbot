@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 # Start Ollama and pull the required LLM.
-# Ollama uses Metal on Apple Silicon and CUDA on Linux/NVIDIA.
-#
-# Install Ollama first: https://ollama.com/download
-#   macOS : brew install ollama   OR   download the .dmg
-#   Linux : curl -fsSL https://ollama.com/install.sh | sh
-#
-# Embeddings run locally via sentence-transformers (no Ollama pull needed).
 
 set -euo pipefail
 
