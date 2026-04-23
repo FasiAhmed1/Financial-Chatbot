@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
-# One-time setup: install Python deps, download FinQA,
-# and build the ChromaDB vector index (embeddings run locally, no server needed).
+
 set -euo pipefail
 
 echo "=============================="
 echo " FinQA Chatbot — Setup"
 echo "=============================="
 
-# ── Detect Python ──────────────────────────────────────────────────────────
 PYTHON=""
 for cmd in python3 python; do
     if command -v "$cmd" &>/dev/null; then
@@ -26,18 +24,15 @@ if [ -z "${VIRTUAL_ENV:-}" ] && [ -z "${CONDA_DEFAULT_ENV:-}" ]; then
     echo "   Continuing without venv …"
 fi
 
-# ── Python dependencies ─────────────────────────────────────────────────────
 echo ""
 echo "[1/3] Installing Python dependencies …"
 "$PYTHON" -m pip install --upgrade pip --quiet
 "$PYTHON" -m pip install -r requirements.txt
 
-# ── FinQA dataset ───────────────────────────────────────────────────────────
 echo ""
 echo "[2/3] Downloading and processing FinQA dataset …"
 "$PYTHON" -m data.prepare_finqa
 
-# ── ChromaDB index ──────────────────────────────────────────────────────────
 echo ""
 echo "[3/3] Building ChromaDB vector index …"
 echo "     (embeddings run locally via sentence-transformers — no server needed)"
