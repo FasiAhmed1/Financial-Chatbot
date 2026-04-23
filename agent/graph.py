@@ -4,9 +4,9 @@ LangGraph AgenticRAG graph for FinQA.
 Architecture
     START
       
-    [agent] -> LLM decides: call a tool or produce final answer
+    [agent] -> LLM decides -call a tool or produce final answer
        
-    [tools] -> ToolNode executes search_documents 
+    [tools] -> Tool Node executes search_documents 
       
     [agent] -> LLM sees tool results continues reasoning
      
@@ -146,7 +146,7 @@ def format_reasoning_trace(messages: list[BaseMessage]) -> str:
                     lines.append(f"🔍 Step {step}: Searching documents")
                     lines.append(f"   Query: \"{args.get('query', '')}\"")
                 elif name == "calculate":
-                    lines.append(f"🧮 Step {step}: Calculating")
+                    lines.append(f"Step {step}: Calculating")
                     lines.append(f"   Expression: {args.get('expression', '')}")
                 else:
                     lines.append(f"🔧 Step {step}: {name}({args})")
