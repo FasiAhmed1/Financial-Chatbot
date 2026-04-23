@@ -6,7 +6,7 @@ langchain-huggingface>=0.1.0
 langgraph>=0.2.0
 langchain-chroma>=0.1.4
 
-# Local embeddings (runs on CPU, no server needed)
+# Local embeddings 
 sentence-transformers>=3.0.0
 
 # Vector store
@@ -16,7 +16,7 @@ chromadb>=0.5.0
 datasets>=2.20.0
 huggingface-hub>=0.24.0
 
-# LLM inference: Ollama (install separately: https://ollama.com/download)
+# LLM inference
 # Python talks to it over the OpenAI-compatible HTTP API, so no Python package needed.
 
 # UI
