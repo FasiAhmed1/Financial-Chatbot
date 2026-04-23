@@ -1,26 +1,6 @@
 """
 Download and preprocess the FinQA dataset.
 
-The ibm/finqa HuggingFace dataset uses a custom loading script that is no
-longer supported in datasets>=3. We download the raw JSON files directly
-from the official FinQA GitHub repository instead.
-
-FinQA JSON format per example:
-  {
-    "id"        : str,
-    "pre_text"  : [str, ...],
-    "post_text" : [str, ...],
-    "table"     : [[str, ...], ...],   # rows x cols
-    "qa": {
-      "question"  : str,
-      "answer"    : str,
-      "program"   : str,
-      "exe_ans"   : float | str,
-    }
-  }
-
-Run:
-    python -m data.prepare_finqa
 """
 
 import json
@@ -41,9 +21,6 @@ _FINQA_URLS = {
 }
 
 
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
 
 def format_table(table: list[list]) -> str:
     """Convert nested-list table to a Markdown-formatted string."""
@@ -97,10 +74,6 @@ def _download_split(name: str, url: str) -> list[dict]:
     print(f"    → {len(data)} examples")
     return data
 
-
-# ---------------------------------------------------------------------------
-# Main processing
-# ---------------------------------------------------------------------------
 
 def prepare(output_dir: str | None = None) -> Path:
     """Download FinQA and write deduplicated document + QA-pair JSON files."""
