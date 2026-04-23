@@ -1,0 +1,33 @@
+# LangChain ecosystem
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-openai>=0.2.0
+langchain-huggingface>=0.1.0
+langgraph>=0.2.0
+langchain-chroma>=0.1.4
+
+# Local embeddings (runs on CPU, no server needed)
+sentence-transformers>=3.0.0
+
+# Vector store
+chromadb>=0.5.0
+
+# FinQA dataset
+datasets>=2.20.0
+huggingface-hub>=0.24.0
+
+# LLM inference: Ollama (install separately: https://ollama.com/download)
+# Python talks to it over the OpenAI-compatible HTTP API, so no Python package needed.
+
+# UI
+gradio>=4.44.0
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+tabulate>=0.9.0
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+httpx>=0.27.0
