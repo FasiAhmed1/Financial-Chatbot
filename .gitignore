@@ -17,7 +17,6 @@ eval_results.json
 .DS_Store
 .idea/
 .vscode/
-.claude/
 
 # Logs
 *.log
