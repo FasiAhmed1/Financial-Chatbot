@@ -2,9 +2,7 @@
 
 set -euo pipefail
 
-echo "=============================="
 echo " FinQA Chatbot — Setup"
-echo "=============================="
 
 PYTHON=""
 for cmd in python3 python; do
@@ -18,7 +16,7 @@ echo "Python : $("$PYTHON" --version)  ($(which "$PYTHON"))"
 
 if [ -z "${VIRTUAL_ENV:-}" ] && [ -z "${CONDA_DEFAULT_ENV:-}" ]; then
     echo ""
-    echo "⚠️  No virtual environment detected."
+    echo " No virtual environment detected."
     echo "   Recommended:"
     echo "     $PYTHON -m venv .venv && source .venv/bin/activate"
     echo "   Continuing without venv …"
@@ -39,11 +37,9 @@ echo "     (embeddings run locally via sentence-transformers — no server neede
 "$PYTHON" -m indexing.build_index
 
 echo ""
-echo "=============================="
 echo " Setup complete!"
 echo ""
 echo " To launch:"
 echo "   Terminal 1 → ./start_ollama.sh     (keep running)"
 echo "   Terminal 2 → $PYTHON app.py"
 echo "   Browser    → http://localhost:7860"
-echo "=============================="
