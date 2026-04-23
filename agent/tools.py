@@ -1,7 +1,5 @@
 """
-LangChain tools used by the FinQA agent:
-  - search_documents : semantic retrieval from ChromaDB
-  - calculate        : safe AST-based arithmetic evaluator
+LangChain tools used by the FinQA agent
 """
 
 import ast
@@ -13,9 +11,6 @@ from langchain_core.tools import tool
 
 from config import config
 
-# ---------------------------------------------------------------------------
-# Safe calculator
-# ---------------------------------------------------------------------------
 
 _SAFE_OPS = {
     ast.Add: operator.add,
@@ -87,9 +82,6 @@ def safe_eval(expression: str) -> float:
     return _eval_node(tree.body)
 
 
-# ---------------------------------------------------------------------------
-# Retriever singleton (lazy init)
-# ---------------------------------------------------------------------------
 
 @lru_cache(maxsize=1)
 def _get_retriever():
@@ -112,10 +104,6 @@ def _get_retriever():
         search_kwargs={"k": config.top_k, "fetch_k": config.top_k * 3},
     )
 
-
-# ---------------------------------------------------------------------------
-# LangChain @tool definitions
-# ---------------------------------------------------------------------------
 
 @tool
 def search_documents(query: str) -> str:
