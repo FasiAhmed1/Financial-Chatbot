@@ -16,6 +16,12 @@ The agent follows a **ReAct** (Reason + Act) loop:
 
 <img width="1256" height="617" alt="1" src="https://github.com/user-attachments/assets/7826b8d2-eaf5-4967-b236-9c7c33af3143" />
 
+
+
+-----
+
+
+
 <img width="1227" height="781" alt="2" src="https://github.com/user-attachments/assets/e9489196-f06e-4549-893a-85023cbbdd03" />
 
 ---
